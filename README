@@ -1,31 +1,31 @@
 = Description
-The union library is the Ruby analog of a C union.
+  The union library provides the Ruby analog of a C union.
 
 = Installation
-   rake test (optional)
-   rake install (standard) or rake install_gem (rubygems)
+  gem install union
 
 = Synopsis
-   require 'union'
+  require 'union'
 
-   Union.new('Human', :name, :age, :height)
-   h = Union::Human.new
+  Union.new('Human', :name, :age, :height)
+  h = Union::Human.new
 
-   # Only one attribute of the union may be set
-   h.name = 'Daniel' # => #<struct Union::Human name="Daniel", age=nil>
-   h.age  = 38       # => #<struct Union::Human name=nil, age=38>
+  # Only one attribute of the union may be set
+  h.name = 'Daniel' # => #<struct Union::Human name="Daniel", age=nil>
+  h.age  = 38       # => #<struct Union::Human name=nil, age=38>
 
 = Known issues or bugs
-None that I'm aware of. Please report any bugs you find on the project page
-at http://www.rubyforge.org/projects/shards
+  None that I'm aware of. Please report any bugs you find on the project
+  page at http://www.rubyforge.org/projects/shards or on the github
+  project page at https://github.com/djberg96/union.
 
 = License
-Artistic 2.0
+  Artistic 2.0
 
 = Warranty
-This package is provided "as is" and without any express or
-implied warranties, including, without limitation, the implied
-warranties of merchantability and fitness for a particular purpose.
+  This package is provided "as is" and without any express or
+  implied warranties, including, without limitation, the implied
+  warranties of merchantability and fitness for a particular purpose.
 
 = Author
-* Daniel J. Berger
+  Daniel J. Berger
