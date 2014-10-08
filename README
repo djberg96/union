@@ -16,11 +16,14 @@
 
 = Known issues or bugs
   None that I'm aware of. Please report any bugs you find on the project
-  page at http://www.rubyforge.org/projects/shards or on the github
-  project page at https://github.com/djberg96/union.
+  page at on the github project page at https://github.com/djberg96/union.
 
 = License
   Artistic 2.0
+
+= Copyright
+  (C) 2003-2014 Daniel J. Berger
+  All Rights Reserved.
 
 = Warranty
   This package is provided "as is" and without any express or
