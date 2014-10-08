@@ -8,7 +8,7 @@ class TC_Union < Test::Unit::TestCase
   end
    
   def test_union_version
-    assert_equal('1.0.3', Union::VERSION)
+    assert_equal('1.0.4', Union::VERSION)
   end
    
   def test_union_constructor      
