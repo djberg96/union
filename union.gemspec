@@ -2,16 +2,17 @@ require 'rubygems'
 
 Gem::Specification.new do |gem|
   gem.name      = 'union'
-  gem.version   = '1.0.3'
+  gem.version   = '1.0.4'
   gem.author    = 'Daniel J. Berger'
   gem.license   = 'Artistic 2.0'
   gem.email     = 'djberg96@gmail.com'
-  gem.homepage  = 'http://www.rubyforge.org/projects/shards'
+  gem.homepage  = 'https://github.com/djberg96/final'
   gem.summary   = 'A struct-like C union for Ruby'
   gem.test_file = 'test/test_union.rb'
   gem.files     = Dir['**/*'].reject{ |f| f.include?('git') }
 
   gem.extra_rdoc_files = ['README', 'CHANGES', 'MANIFEST']
+  gem.add_development_dependency('rake')
 
   gem.description = <<-EOF
     The union library provides an analog to a C/C++ union for Ruby.
