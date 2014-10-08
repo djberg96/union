@@ -2,6 +2,6 @@
 * MANIFEST
 * README
 * Rakefile
-* facade.gemspec
+* union.gemspec
 * lib/union.rb
 * test/test_union.rb
