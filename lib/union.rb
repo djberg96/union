@@ -3,7 +3,7 @@
 #
 class Union < Struct
   # The version of the union library
-  VERSION = '1.0.4'
+  VERSION = '1.0.5'
 
   # Creates and returns a new Union. Unlike Struct::Class.new, this does not
   # take any arguments. You must assign attributes individually.
