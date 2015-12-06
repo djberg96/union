@@ -7,13 +7,10 @@ CLEAN.include("**/*.gem", "**/*.rbc", "**/*.rbx")
 namespace :gem do
   desc 'Build the union gem'
   task :create => [:clean] do
+    require 'rubygems/package'
     spec = eval(IO.read('union.gemspec'))
-    if Gem::VERSION.to_f < 2.0
-      Gem::Builder.new(spec).build
-    else
-      require 'rubygems/package'
-      Gem::Package.build(spec)
-    end
+    spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
+    Gem::Package.build(spec, true)
   end
 
   task :install => [:create] do
