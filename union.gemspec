@@ -2,7 +2,7 @@ require 'rubygems'
 
 Gem::Specification.new do |gem|
   gem.name       = 'union'
-  gem.version    = '1.0.5'
+  gem.version    = '1.0.6'
   gem.author     = 'Daniel J. Berger'
   gem.license    = 'Artistic 2.0'
   gem.email      = 'djberg96@gmail.com'
@@ -14,6 +14,15 @@ Gem::Specification.new do |gem|
 
   gem.extra_rdoc_files = ['README', 'CHANGES', 'MANIFEST']
   gem.add_development_dependency('rake')
+
+  spec.metadata = {
+    'homepage_uri'      => 'https://github.com/djberg96/union',
+    'bug_tracker_uri'   => 'https://github.com/djberg96/union/issues',
+    'changelog_uri'     => 'https://github.com/djberg96/union/blob/master/CHANGES',
+    'documentation_uri' => 'https://github.com/djberg96/union/wiki',
+    'source_code_uri'   => 'https://github.com/djberg96/union',
+    'wiki_uri'          => 'https://github.com/djberg96/union/wiki'
+  }
 
   gem.description = <<-EOF
     The union library provides an analog to a C/C++ union for Ruby.
