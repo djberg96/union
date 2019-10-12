@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name       = 'union'
   spec.version    = '1.0.6'
   spec.author     = 'Daniel J. Berger'
-  spec.license    = 'Artistic 2.0'
+  spec.license    = 'Artistic-2.0'
   spec.email      = 'djberg96@gmail.com'
   spec.homepage   = 'https://github.com/djberg96/union'
   spec.summary    = 'A struct-like C union for Ruby'
