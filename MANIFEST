@@ -6,4 +6,4 @@
 * union.gemspec
 * certs/djberg96_pub.pem
 * lib/union.rb
-* test/test_union.rb
+* spec/union_spec.rb
