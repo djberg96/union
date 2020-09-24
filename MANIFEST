@@ -2,6 +2,7 @@
 * LICENSE
 * MANIFEST
 * README
+* Gemfile
 * Rakefile
 * union.gemspec
 * certs/djberg96_pub.pem
