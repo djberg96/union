@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # The Union class provides an analogue of a C union. Only one member of
 # a Union object can be set to a non-nil value at a time.
 #
 class Union < Struct
   # The version of the union library
-  VERSION = '1.2.0'.freeze
+  VERSION = '1.2.0'
 
   # Creates and returns a new Union. Unlike Struct::Class.new, this does not
   # take any arguments. You must assign attributes individually.
@@ -20,14 +22,14 @@ class Union < Struct
   #
   def initialize
     super
-    members.each{ |attribute|
-      m = %Q{
+    members.each do |attribute|
+      m = %{
         def #{attribute}=(value)
           self['#{attribute}'] = value
         end
       }
       instance_eval(m)
-    }
+    end
   end
 
   # Identical to Struct attribute assignment, except that setting one instance
