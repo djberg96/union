@@ -8,7 +8,7 @@ namespace :gem do
   desc 'Build the union gem'
   task :create => [:clean] do
     require 'rubygems/package'
-    spec = eval(IO.read('union.gemspec'))
+    spec = Gem::Specification.load('union.gemspec')
     spec.signing_key = File.join(Dir.home, '.ssh', 'gem-private_key.pem')
     Gem::Package.build(spec)
   end
