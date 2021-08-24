@@ -4,6 +4,9 @@ The union library provides the Ruby analog of a C union.
 ## Installation
 `gem install union`
 
+## Adding the trusted cert
+`gem cert --add <(curl -Ls https://raw.githubusercontent.com/djberg96/union/main/certs/djberg96_pub.pem)`
+
 ## Synopsis
 ```ruby
 require 'union'
