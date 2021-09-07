@@ -1,3 +1,5 @@
+[![Ruby](https://github.com/djberg96/union/actions/workflows/ruby.yml/badge.svg)](https://github.com/djberg96/union/actions/workflows/ruby.yml)
+
 ## Description
 The union library provides the Ruby analog of a C union.
 
