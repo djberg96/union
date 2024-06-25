@@ -43,7 +43,7 @@ class Union < Struct
   #    h[:age]  = 38       # => #<struct Union::Human name=nil, age=38>
   #
   def []=(symbol, value)
-    super(symbol, value)
+    super
     members.each{ |m| super(m, nil) unless m.to_s == symbol.to_s }
   end
 end
