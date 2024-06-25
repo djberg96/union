@@ -4,8 +4,6 @@ RSpec/MultipleExpectations:
   Max: 7
 RSpec/ContextWording:
   Enabled: false
-RSpec/FilePath:
-  SpecSuffixOnly: true
 RSpec/InstanceVariable:
   Enabled: false
 RSpec/BeforeAfterAll:
