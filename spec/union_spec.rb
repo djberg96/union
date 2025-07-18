@@ -13,7 +13,7 @@ RSpec.describe Union do
   end
 
   example 'VERSION constant is set to expected value' do
-    expect(Union::VERSION).to eq('1.2.0')
+    expect(Union::VERSION).to eq('1.3.0')
     expect(Union::VERSION).to be_frozen
   end
 

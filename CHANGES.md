@@ -1,3 +1,7 @@
+## 1.3.0 - 18-Jul-2020
+* Added two methods, which_member and current_value.
+* Internal refactoring that also adds some stricter argument checking.
+
 ## 1.2.0 - 24-Sep-2020
 * Switched from test-unit to rspec.
 * Added a Gemfile.
