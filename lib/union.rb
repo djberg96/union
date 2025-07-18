@@ -22,14 +22,7 @@ class Union < Struct
   #
   def initialize
     super
-    members.each do |attribute|
-      m = %{
-        def #{attribute}=(value)
-          self['#{attribute}'] = value
-        end
-      }
-      instance_eval(m)
-    end
+    define_union_setters
   end
 
   # Identical to Struct attribute assignment, except that setting one instance
@@ -43,7 +36,55 @@ class Union < Struct
   #    h[:age]  = 38       # => #<struct Union::Human name=nil, age=38>
   #
   def []=(symbol, value)
-    super
-    members.each{ |m| super(m, nil) unless m.to_s == symbol.to_s }
+    # Validate that the symbol is a valid member
+    symbol_str = symbol.to_s
+    unless members.any? { |m| m.to_s == symbol_str }
+      raise ArgumentError, "no member '#{symbol}' in union"
+    end
+
+    # Set the value for the specified member
+    super(symbol, value)
+
+    # Clear all other members
+    members.each { |m| super(m, nil) unless m.to_s == symbol_str }
+
+    value
+  end
+
+  # Returns the name of the currently set member (the one with a non-nil value)
+  # Returns nil if no member is set
+  #
+  #    Union.new('Human', :name, :age)
+  #    h = Union::Human.new
+  #    h.name = 'Daniel'
+  #    h.which_member # => :name
+  #
+  def which_member
+    members.find { |member| self[member] }
+  end
+
+  # Returns the current value (the value of the non-nil member)
+  # Returns nil if no member is set
+  #
+  #    Union.new('Human', :name, :age)
+  #    h = Union::Human.new
+  #    h.name = 'Daniel'
+  #    h.current_value # => 'Daniel'
+  #
+  def current_value
+    member = which_member
+    member ? self[member] : nil
+  end
+
+  private
+
+  # Define setter methods for each union member using define_singleton_method
+  # This is safer and more efficient than instance_eval with string interpolation
+  def define_union_setters
+    members.each do |attribute|
+      define_singleton_method("#{attribute}=") do |value|
+        self[attribute] = value
+      end
+    end
   end
 end
