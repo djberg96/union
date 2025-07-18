@@ -49,4 +49,30 @@ RSpec.describe Union do
     expect(@union[:height]).to be_nil
     expect(@union[:age]).to eq(38)
   end
+
+  example 'enhanced []= method returns assigned value' do
+    result = (@union[:name] = 'Test Value')
+    expect(result).to eq('Test Value')
+
+    result = (@union['age'] = 42)
+    expect(result).to eq(42)
+  end
+
+  example 'enhanced []= method validates member names' do
+    expect { @union[:invalid_member] = 'test' }.to raise_error(ArgumentError, /no member 'invalid_member' in union/)
+    expect { @union['another_invalid'] = 'test' }.to raise_error(ArgumentError, /no member 'another_invalid' in union/)
+  end
+
+  example 'setter methods are properly defined and work safely' do
+    # Test that all expected setter methods exist
+    expect(@union).to respond_to(:name=)
+    expect(@union).to respond_to(:age=)
+    expect(@union).to respond_to(:height=)
+
+    # Test that they work correctly
+    @union.name = 'Safe Test'
+    expect(@union.name).to eq('Safe Test')
+    expect(@union.age).to be_nil
+    expect(@union.height).to be_nil
+  end
 end
