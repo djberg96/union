@@ -60,7 +60,7 @@ class Union < Struct
   #    h.which_member # => :name
   #
   def which_member
-    members.find { |member| self[member] }
+    members.find { |member| !self[member].nil? }
   end
 
   # Returns the current value (the value of the non-nil member)
